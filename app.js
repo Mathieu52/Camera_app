@@ -16,23 +16,5 @@ function cameraStart() {
 	});
 }
 
-function updatePosition() {
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(showPosition, error);
-	}
-	id = setTimeout(updatePosition, 10);
-}
-
-function error(err) {
-	text2.innerHTML = `ERREUR (${err.code}): ${err.message}`;
-}
-
-function showPosition(pos) {
-	text2.innerHTML = Math.random();
-	//text2.innerHTML = position.coords.latitude;
-	//mapPointer.style.left = position.coords.latitude*5+"px";
-	//mapPointer.style.top = position.coords.longitude*5+"px";
-}
-
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
