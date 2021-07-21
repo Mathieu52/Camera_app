@@ -1,12 +1,3 @@
-const fs = require('fs');
-//const key = fs.readFileSync('./key.pem');
-//const cert = fs.readFileSync('./cert.pem');
-
-//const express = require('express');
-//const https = require('https');
-//const app = express();
-//const server = https.createServer({key: key, cert: cert }, app);
-
 // Set constraints for the video stream
 var constraints = { video: { facingMode: "environment" }, audio: false };
 var id;
