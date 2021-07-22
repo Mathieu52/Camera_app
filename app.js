@@ -8,7 +8,6 @@ const cameraView = document.querySelector("#camera--view"),
       text2 = document.getElementById("text")
 // Access the device camera and stream to cameraView
 function cameraStart() {
-	text2.innerHTML = "camera"+Math.random();
 	navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
 		track = stream.getTracks()[0];
 		cameraView.srcObject = stream;
