@@ -31,7 +31,7 @@ function error(err) {
 }
 
 function showPosition(position) {
-	text2.innerHTML = "show"+Math.random();
+	text2.innerHTML = "show"+position.coords.latitude;
 	//text2.innerHTML = position.coords.latitude;
 	mapPointer.style.left = position.coords.latitude*5+"px";
 	mapPointer.style.top = position.coords.longitude*5+"px";
