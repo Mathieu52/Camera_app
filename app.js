@@ -20,6 +20,7 @@ function updatePosition() {
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(showPosition, error);
 	}
+	text2.innerHTML = "show"+Math.random();
 	//text2.innerHTML = Math.random();
 	id = setTimeout(updatePosition, 10);
 }
@@ -29,7 +30,7 @@ function error(err) {
 }
 
 function showPosition(pos) {
-	text2.innerHTML = "show"+Math.random();
+	//text2.innerHTML = "show"+Math.random();
 	//mapPointer.style.left = position.coords.latitude*5+"px";
 	//bmapPointer.style.top = position.coords.longitude*5+"px";
 }
