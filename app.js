@@ -23,7 +23,7 @@ function cameraStart() {
 
 function updatePosition() {
 	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(showPosition, error);
+        navigator.geolocation.getCurrentPosition(showPosition, error);
 	}
 	id = setTimeout(updatePosition, 10);
 }
@@ -59,24 +59,17 @@ function showPosition(position) {
 	//mapPointer.style.top = position.coords.longitude*5+"px";
 }
 
-function getAccel() {
+function handleOrientation(event) {
     text2.innerHTML = "test";
-    DeviceMotionEvent.requestPermission().then(response => {
-        text2.innerHTML = response;
-        if (response == 'granted') {
-            // Add a listener to get smartphone acceleration 
-            // in the XYZ axes (units in m/s^2)
-            window.addEventListener('devicemotion', (event) => {
-                //text2.innerHTML = event.alpha;
-            });
-            // Add a listener to get smartphone orientation 
-            // in the alpha-beta-gamma axes (units in degrees)
-            window.addEventListener('deviceorientation', (event) => {
-                console.log(event);
-            });
-        }
-    });
+    //var absolute = event.absolute;
+    //var alpha = event.alpha;
+    //var beta = event.beta;
+    //var gamma = event.gamma;
+
+    // Do stuff with the new orientation data
 }
+
 
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
+window.addEventListener("deviceorientation", handleOrientation);
