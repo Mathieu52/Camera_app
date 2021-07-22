@@ -10,7 +10,6 @@ const cameraView = document.querySelector("#camera--view"),
 	text2 = document.getElementById("text")
 // Access the device camera and stream to cameraView
 function cameraStart() {
-    getAccel();
     navigator.mediaDevices
         .getUserMedia(constraints)
         .then(function(stream) {
@@ -61,12 +60,14 @@ function showPosition(position) {
 }
 
 function getAccel() {
+    text2.innerHTML = "test";
     DeviceMotionEvent.requestPermission().then(response => {
+        text2.innerHTML = response;
         if (response == 'granted') {
             // Add a listener to get smartphone acceleration 
             // in the XYZ axes (units in m/s^2)
             window.addEventListener('devicemotion', (event) => {
-                text2.innerHTML = event.alpha;
+                //text2.innerHTML = event.alpha;
             });
             // Add a listener to get smartphone orientation 
             // in the alpha-beta-gamma axes (units in degrees)
