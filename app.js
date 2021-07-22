@@ -16,5 +16,12 @@ function cameraStart() {
 	});
 }
 
+function updatePosition() {
+	if (navigator.geolocation) {
+		//navigator.geolocation.getCurrentPosition(showPosition, error);
+	}
+	id = setTimeout(updatePosition, 10);
+}
+
 // Start the video stream when the window loads
 window.addEventListener("load", cameraStart, false);
