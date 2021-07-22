@@ -18,7 +18,7 @@ function cameraStart() {
 
 function updatePosition() {
 	if (navigator.geolocation) {
-		//navigator.geolocation.getCurrentPosition(showPosition, error);
+		navigator.geolocation.getCurrentPosition(showPosition, error);
 	}
 	id = setTimeout(updatePosition, 10);
 }
