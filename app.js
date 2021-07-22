@@ -17,9 +17,9 @@ function cameraStart() {
 }
 
 function updatePosition() {
-	//if (navigator.geolocation) {
-		//navigator.geolocation.getCurrentPosition(showPosition, error);
-	//}
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition, error);
+	}
 	text2.innerHTML = Math.random();
 	id = setTimeout(updatePosition, 10);
 }
