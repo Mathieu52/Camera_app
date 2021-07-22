@@ -17,9 +17,10 @@ function cameraStart() {
 }
 
 function updatePosition() {
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(showPosition, error);
-	}
+	//if (navigator.geolocation) {
+		//navigator.geolocation.getCurrentPosition(showPosition, error);
+	//}
+	text2.innerHTML = Math.random();
 	id = setTimeout(updatePosition, 10);
 }
 
@@ -28,7 +29,6 @@ function error(err) {
 }
 
 function showPosition(pos) {
-	text2.innerHTML = Math.random();
 	//text2.innerHTML = position.coords.latitude;
 	//mapPointer.style.left = position.coords.latitude*5+"px";
 	//mapPointer.style.top = position.coords.longitude*5+"px";
